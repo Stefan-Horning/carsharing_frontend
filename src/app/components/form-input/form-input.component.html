@@ -1,0 +1,13 @@
+<div class="relative w-[80%] mt-4">
+    <span class="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400">
+      <img [src]="icon" class="h-5 w-5 object-cover" alt="">
+    </span>
+    <input [type]="type" class="border-1 border-[#E5E5E5] text-gray-600 text-sm w-full p-3 rounded-md pl-10 peer shadow-sm"
+           placeholder=" " [id]="id">
+    <label [for]="id"
+           class="absolute left-10 top-0 transform -translate-y-1/2 text-gray-400 peer-placeholder-shown:top-1/2 
+                  peer-placeholder-shown:-translate-y-1/2 peer-focus:top-0 peer-focus:-translate-y-1/2 
+                  transition-all bg-[#F9FAFB] px-1">
+      <span class="text-sm">{{ label }}</span>
+    </label>
+</div>  

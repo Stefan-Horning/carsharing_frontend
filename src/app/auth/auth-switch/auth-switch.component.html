@@ -1,0 +1,6 @@
+<div class="text-center pt-6">
+    <span *ngIf="!forgot" class="text-gray-400 text-sm"> {{ isLogin ? "Don't have an account?" : "Already have an account?" }}</span> 
+    <a *ngIf="!forgot" [routerLink]="isLogin ? ['/auth', 'signup'] : ['/auth', 'login']" class="text-[#FF5C00] text-sm"> {{ isLogin ? 'Sign Up' : 'Sign In' }} </a>
+    <span *ngIf="forgot" class="text-gray-400 text-sm">Remember your old password? </span> 
+    <a *ngIf="forgot" [routerLink]="['/auth', 'login']" class="text-[#FF5C00] text-sm">Sign In</a>
+</div>

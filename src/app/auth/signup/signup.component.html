@@ -1,0 +1,14 @@
+<div>
+    <app-header title="Sign-Up" subTitle="Rent your dream car!"></app-header>
+    <form action="" method="post">
+        <div class="flex flex-col items-center pt-5 justify-center w-full">
+            <app-form-input class="w-full flex justify-center" type="name" id="name" label="Full Name" icon="icons/user.svg"></app-form-input>
+            <app-form-input class="w-full flex justify-center" type="email" id="email" label="Email address" icon="icons/email.svg"></app-form-input>
+            <app-form-input class="w-full flex justify-center" type="number" id="phone" label="Phone number" icon="icons/phone.svg"></app-form-input>
+            <app-form-input class="w-full flex justify-center" type="password" id="password" label="Password" icon="icons/lock.svg"></app-form-input>
+            <div class="p-4"></div>
+            <app-button type="submit" class="w-full flex justify-center" name="Login"></app-button>
+        </div>
+    </form>
+    <app-auth-switch [forgot]="false" [isLogin]="false"></app-auth-switch>
+</div>
