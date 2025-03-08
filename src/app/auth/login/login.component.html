@@ -8,6 +8,7 @@
                 <a [routerLink]="['/auth', 'forgot-password']" class="text-[#FF5C00] text-sm mt-3">Forgot Password?</a>
             </div>
             <app-button type="submit" class="w-full flex justify-center" name="Login"></app-button>
+            <app-button color="other" type="submit" class="w-full flex justify-center mt-3" name="Guest"></app-button>
         </div>
     </form>
     <app-auth-switch [forgot]="false" [isLogin]="true"></app-auth-switch>
