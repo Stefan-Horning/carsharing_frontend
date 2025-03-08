@@ -20,6 +20,9 @@ export const routes: Routes = [
         path: 'login', redirectTo: 'auth/login'
     },
     {
-        path: 'homepage', component: HomepageComponent
+        path: '', component: HomepageComponent
+    },
+    {
+        path: '**', redirectTo: ''
     }
 ];
