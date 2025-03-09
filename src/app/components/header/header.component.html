@@ -1,0 +1,33 @@
+<div class="over-div destop">
+    <div class="navi" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+        <div>
+            <img src="./img/GoDrive-logo.webp" alt="">
+        </div>
+        <div>
+            <a aria-label="Home-Seite" routerLink="/" (click)="openNav()" [routerLinkActive]="'active-link'" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+            <a aria-label="Galerie-Seite" routerLink="/profile" (click)="openNav()" [routerLinkActive]="'active-link'" >Profile</a>
+            <a aria-label="Galerie-Seite" routerLink="/login" (click)="openNav()" [routerLinkActive]="'active-link'" >Logout</a>
+        </div>
+        
+    </div>
+</div>
+
+<div (click)="openNav()" class="close" *ngIf="!openMobile">
+    <img src="./icons/menu.webp" alt="">
+</div>
+
+<img  class="mobile-logo" src="./img/GoDrive-logo.webp" alt="">
+
+
+<div class="over-div mobile" *ngIf="openMobile">
+    <img (click)="openNav()" class="closeButton" src="./icons/x.webp" alt="">
+    <div class="navi">
+
+        <div>
+            <img src="/img/GoDrive-logo.webp" alt="">
+        </div>
+        <a aria-label="Home-Seite" routerLink="/" (click)="openNav()" [routerLinkActive]="'active-link'" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+        <a aria-label="Galerie-Seite" routerLink="/profile" (click)="openNav()" [routerLinkActive]="'active-link'" >Profile</a>
+        <a aria-label="Galerie-Seite" routerLink="/login" (click)="openNav()" [routerLinkActive]="'active-link'" >Logout</a>
+    </div>
+</div>

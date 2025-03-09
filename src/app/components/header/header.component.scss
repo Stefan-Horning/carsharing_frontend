@@ -1,0 +1,585 @@
+.over-div{
+    margin-top: 10px;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    flex-direction: row;
+    @media (max-width:1000px) {
+      max-width: 100vw;
+      margin-top: 0px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      background-color: rgba(0,0,0,0.7);
+      flex-direction: column;
+      justify-content: center;
+    }
+}
+
+.destop{
+  @media (max-width:1000px) {
+    display: none;
+  }
+}
+
+.mobile{
+  position: fixed;
+  display: none;
+  @media (max-width:1000px) {
+    display: flex;
+    flex-direction: column;
+
+    a{
+      max-width: min-content;
+    }
+  }
+
+ img{
+  object-fit: cover;
+ }
+}
+
+.close{
+  z-index: 50;
+  cursor: pointer;
+  display: none;
+  height: 20px;
+  width: 20px;
+  z-index: 20;
+  @media (max-width:1000px) {
+    display: flex !important;
+    position: absolute;
+    top: 30px;
+    right: 20px;
+  }
+  img{
+    height: 20px;
+    width: 20px;
+  }
+}
+
+.navi{
+    display: flex;
+    margin-left: 50px;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    @media (max-width:1000px) {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-right: 0px;
+      margin-left: 0px;
+    }
+
+    @media (max-width:1340px) {
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+
+    img{
+        object-fit: cover;
+        max-width: 300px;
+        max-height: 200px;
+        margin-right: 100px;
+
+        @media (max-width:1000px) {
+          margin-right: 0px;
+          padding: 16px;
+        }
+
+        @media (max-width:1340px) {
+          margin-right: 10px;
+          max-width: 250px;
+          max-height: 150px;
+        }
+    }
+
+    a{
+      cursor: pointer;
+        text-decoration: none;
+        padding: 8px;
+        color: rgb(0, 0, 0);
+        border-bottom: 1px solid none;
+        transition: all 250ms ease-in-out;
+        margin-left: 10px;
+        margin-right: 10px;
+        border-radius: 20px;
+        font-size: 18px;
+        @media (max-width:1000px) {
+          padding: 16px;
+        }
+    }
+
+    margin-right: 100px;
+}
+
+button {
+    border-radius: 5px;
+    max-width: 220px;
+    padding: 8px;
+    border: 1px solid rgb(0, 0, 0) !important;
+    font-family: 'Open Sans';
+    margin-right: 50px;
+    position: relative;
+    background: none;
+    color: #000000;
+    cursor: pointer;
+    font-size: 18px;
+    overflow: hidden;
+
+    @media (max-width:1000px) {
+      margin-top: 30px;
+      margin-right: 0px;
+    }
+  
+    &::before,
+    &::after {
+    border: none;
+      content: '';
+      width: 0;
+      height: 2px;
+      position: absolute;
+      transition: all 0.2s linear;
+      background: #000000;
+    }
+  
+    span {
+      &::before,
+      &::after {
+        content: '';
+        width: 2px;
+        height: 0;
+        position: absolute;
+        transition: all 0.2s linear;
+        background: #000000;
+      }
+    }
+  
+    &:hover::before,
+    &:hover::after {
+      width: 100%;
+    }
+  
+    &:hover span::before,
+    &:hover span::after {
+      height: 100%;
+    }
+}
+  
+.btn-2 {
+    position: relative;
+    background: none;
+    border: none;
+    color: #000000;
+    cursor: pointer;
+    font-size: 18px;
+    overflow: hidden;
+  
+    &::before,
+    &::after {
+      content: '';
+      width: 0;
+      height: 2px;
+      position: absolute;
+      transition: all 0.2s linear;
+      background: #000000;
+      transition-delay: 0s;
+    }
+  
+    span {
+      &::before,
+      &::after {
+        content: '';
+        width: 2px;
+        height: 0;
+        position: absolute;
+        transition: all 0.2s linear;
+        background: #000000;
+        transition-delay: 0.2s;
+      }
+    }
+  
+    &::before {
+      right: 0;
+      top: 0;
+    }
+  
+    &::after {
+      left: 0;
+      bottom: 0;
+    }
+  
+    span::before {
+      left: 0;
+      top: 0;
+    }
+  
+    span::after {
+      right: 0;
+      bottom: 0;
+    }
+  
+    &:hover::before,
+    &:hover::after {
+      transition-delay: 0.2s;
+    }
+  
+    &:hover span::before,
+    &:hover span::after {
+      transition-delay: 0s;
+    }
+  }
+  
+
+
+.navi a {
+    display: inline-block;
+    position: relative;
+    color: rgb(0, 0, 0);
+
+    @media (max-width:1340px) {
+      font-size: 16px;
+    }
+    color: black;
+}
+
+.navi a:after {
+    content: '';
+    position: absolute;
+    color: rgb(197, 197, 197);
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;    // filepath: /Users/stefanhorning/Documents/programming/Eigene Projekte/carsharing_frontend/src/app/components/header/header.component.scss
+    
+    .navi a {
+        display: inline-block;
+        position: relative;
+        color: black;
+    
+        @media (max-width:1340px) {
+          font-size: 16px;
+        }
+    }
+    
+    .navi a:after {
+        content: '';
+        position: absolute;
+        color: rgb(197, 197, 197);
+        width: 100%;
+        transform: scaleX(0);
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: rgb(0, 0, 0);
+        transform-origin: bottom right;
+        transition: transform 0.25s ease-out;
+    }
+      
+    .navi a:hover:after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+        color: #FF5C00;
+    }
+    
+    .active-link{
+      color: #FF5C00 !important;
+    }
+    
+    .over-div {
+        margin-top: 10px;
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        height: 80px;
+        flex-direction: row;
+        background-color: rgb(0, 0, 0);
+        @media (max-width:1000px) {
+          max-width: 100vw;
+          margin-top: 0px;
+          position: fixed;
+          top: 0;
+          left: 0;
+          height: 100vh;
+          background-color: rgba(0, 0, 0, 0.7);
+          flex-direction: column;
+          justify-content: center;
+        }
+    }
+    
+    .destop {
+      @media (max-width:1000px) {
+        display: none;
+      }
+    }
+    
+    .mobile {
+      position: fixed;
+      display: none;
+      @media (max-width:1000px) {
+        display: flex;
+        flex-direction: column;
+    
+        a {
+          max-width: min-content;
+        }
+      }
+    
+      img {
+        object-fit: cover;
+      }
+    }
+    
+    .close {
+      z-index: 50;
+      cursor: pointer;
+      display: none;
+      height: 20px;
+      width: 20px;
+      z-index: 20;
+      @media (max-width:1000px) {
+        display: flex !important;
+        position: absolute;
+        top: 30px;
+        right: 20px;
+      }
+      img {
+        height: 20px;
+        width: 20px;
+      }
+    }
+    
+    .navi {
+        display: flex;
+        margin-left: 50px;
+        flex-direction: row;
+        @media (max-width:1000px) {
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          margin-right: 0px;
+          margin-left: 0px;
+        }
+    
+        @media (max-width:1340px) {
+          margin-left: 20px;
+          margin-right: 20px;
+        }
+    
+        img {
+            object-fit: cover;
+            max-width: 300px;
+            max-height: 200px;
+            margin-right: 100px;
+    
+            @media (max-width:1000px) {
+              margin-right: 0px;
+              padding: 16px;
+            }
+    
+            @media (max-width:1340px) {
+              margin-right: 10px;
+              max-width: 250px;
+              max-height: 150px;
+            }
+        }
+    
+        a {
+          cursor: pointer;
+            text-decoration: none;
+            padding: 8px;
+            color: black;
+            border-bottom: 1px solid none;
+            transition: all 250ms ease-in-out;
+            margin-left: 10px;
+            margin-right: 10px;
+            border-radius: 20px;
+            font-size: 18px;
+            @media (max-width:1000px) {
+              padding: 16px;
+            }
+        }
+    
+        margin-right: 100px;
+    }
+    
+    button {
+        border-radius: 5px;
+        max-width: 220px;
+        padding: 8px;
+        border: 1px solid black !important;
+        font-family: 'Open Sans';
+        margin-right: 50px;
+        position: relative;
+        background: none;
+        color: #000;
+        cursor: pointer;
+        font-size: 18px;
+        overflow: hidden;
+    
+        @media (max-width:1000px) {
+          margin-top: 30px;
+          margin-right: 0px;
+        }
+      
+        &::before,
+        &::after {
+        border: none;
+          content: '';
+          width: 0;
+          height: 2px;
+          position: absolute;
+          transition: all 0.2s linear;
+          background: #000;
+        }
+      
+        span {
+          &::before,
+          &::after {
+            content: '';
+            width: 2px;
+            height: 0;
+            position: absolute;
+            transition: all 0.2s linear;
+            background: #000;
+          }
+        }
+      
+        &:hover::before,
+        &:hover::after {
+          width: 100%;
+        }
+      
+        &:hover span::before,
+        &:hover span::after {
+          height: 100%;
+        }
+    }
+      
+    .btn-2 {
+        position: relative;
+        background: none;
+        border: none;
+        color: #000;
+        cursor: pointer;
+        font-size: 18px;
+        overflow: hidden;
+      
+        &::before,
+        &::after {
+          content: '';
+          width: 0;
+          height: 2px;
+          position: absolute;
+          transition: all 0.2s linear;
+          background: #000;
+          transition-delay: 0s;
+        }
+      
+        span {
+          &::before,
+          &::after {
+            content: '';
+            width: 2px;
+            height: 0;
+            position: absolute;
+            transition: all 0.2s linear;
+            background: #000;
+            transition-delay: 0.2s;
+          }
+        }
+      
+        &::before {
+          right: 0;
+          top: 0;
+        }
+      
+        &::after {
+          left: 0;
+          bottom: 0;
+        }
+      
+        span::before {
+          left: 0;
+          top: 0;
+        }
+      
+        span::after {
+          right: 0;
+          bottom: 0;
+        }
+      
+        &:hover::before,
+        &:hover::after {
+          transition-delay: 0.2s;
+        }
+      
+        &:hover span::before,
+        &:hover span::after {
+          transition-delay: 0s;
+        }
+    }
+    
+    .mobile-logo {
+      display: none;
+      @media (max-width:1000px) {
+        display: block;
+        position: absolute;
+        top: 0px;
+        left: 20px;
+        width: 200px;
+        height: 80px;
+        object-fit: contain;
+      }
+    }
+    
+    .closeButton {
+      position: fixed;
+      top: 30px;
+      right: 20px;
+      height: 20px;
+      width: 20px;
+    }
+    left: 0;
+    background-color: rgb(0, 0, 0);
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+  
+.navi a:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+    color: #FF5C00;
+}
+
+.active-link{
+  color: #FF5C00 !important;
+}
+
+.mobile-logo{
+  display: none;
+  @media (max-width:1000px) {
+    display: block;
+    position: absolute;
+  top: 0px;
+  left: 20px;
+
+  width: 200px;
+  height: 80px;
+  object-fit: contain;
+  }
+  
+}
+
+.closeButton{
+  position: fixed;
+  top: 30px;
+  right: 20px;
+  height: 20px;
+  width: 20px;
+}
