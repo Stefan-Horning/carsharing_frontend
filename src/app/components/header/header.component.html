@@ -19,15 +19,14 @@
 <img  class="mobile-logo" src="./img/GoDrive-logo.webp" alt="">
 
 
-<div class="over-div mobile" *ngIf="openMobile">
+<div class="over-div mobile z-40" *ngIf="openMobile">
     <img (click)="openNav()" class="closeButton" src="./icons/x.webp" alt="">
-    <div class="navi">
-
+    <div class="navi text-white">
         <div>
             <img src="/img/GoDrive-logo.webp" alt="">
         </div>
         <a aria-label="Home-Seite" routerLink="/" (click)="openNav()" [routerLinkActive]="'active-link'" [routerLinkActiveOptions]="{ exact: true }">Home</a>
-        <a aria-label="Galerie-Seite" routerLink="/profile" (click)="openNav()" [routerLinkActive]="'active-link'" >Profile</a>
+        <a aria-label="Galerie-Seite" routerLink="/profile" (click)="openNav()" [routerLinkActive]="'active-link'">Profile</a>
         <a aria-label="Galerie-Seite" routerLink="/login" (click)="openNav()" [routerLinkActive]="'active-link'" >Logout</a>
     </div>
 </div>
