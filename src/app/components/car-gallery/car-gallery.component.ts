@@ -1,10 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { CardComponent } from './card/card.component';
+import { PopUpCarComponent } from './pop-up-car/pop-up-car.component';
 
 @Component({
   selector: 'app-car-gallery',
-  imports: [CommonModule,CardComponent],
+  imports: [CommonModule, CardComponent,PopUpCarComponent],
   templateUrl: './car-gallery.component.html',
   styleUrl: './car-gallery.component.scss'
 })
@@ -16,7 +17,8 @@ export class CarGalleryComponent {
       year: 2020,
       price: 30000,
       img: './img/Porsche.webp',
-      like: false
+      like: false,
+      features: ['Bluetooth', 'Backup Camera', 'Heated Seats']
     },
     {
       make: 'Honda',
@@ -24,7 +26,8 @@ export class CarGalleryComponent {
       year: 2020,
       price: 30000,
       img: './img/Porsche.webp',
-      like: false
+      like: false,
+      features: ['Bluetooth', 'Backup Camera', 'Heated Seats']
     },
     {
       make: 'Ford',
@@ -32,7 +35,8 @@ export class CarGalleryComponent {
       year: 2020,
       price: 30000,
       img: './img/Porsche.webp',
-      like: false
+      like: false,
+      features: ['Bluetooth', 'Backup Camera', 'Heated Seats']
     },
     {
       make: 'Porsche',
@@ -40,7 +44,8 @@ export class CarGalleryComponent {
       year: 2020,
       price: 30000,
       img: './img/Porsche.webp',
-      like: false
+      like: false,
+      features: ['Bluetooth', 'Backup Camera', 'Heated Seats']
     },
     {
       make: 'Chevrolet',
@@ -48,7 +53,8 @@ export class CarGalleryComponent {
       year: 2020,
       price: 30000,
       img: './img/Porsche.webp',
-      like: false
+      like: false,
+      features: ['Bluetooth', 'Backup Camera', 'Heated Seats']
     },
     {
       make: 'BMW',
@@ -56,7 +62,8 @@ export class CarGalleryComponent {
       year: 2021,
       price: 70000,
       img: './img/Porsche.webp',
-      like: false
+      like: false,
+      features: ['Bluetooth', 'Backup Camera', 'Heated Seats']
     },
     {
       make: 'Audi',
@@ -64,7 +71,8 @@ export class CarGalleryComponent {
       year: 2021,
       price: 40000,
       img: './img/Porsche.webp',
-      like: false
+      like: false,
+      features: ['Bluetooth', 'Backup Camera', 'Heated Seats']
     },
     {
       make: 'Mercedes-Benz',
@@ -72,7 +80,8 @@ export class CarGalleryComponent {
       year: 2021,
       price: 50000,
       img: './img/Porsche.webp',
-      like: false
+      like: false,
+      features: ['Bluetooth', 'Backup Camera', 'Heated Seats']
     },
     {
       make: 'Tesla',
@@ -80,7 +89,8 @@ export class CarGalleryComponent {
       year: 2021,
       price: 80000,
       img: './img/Porsche.webp',
-      like: false
+      like: false,
+      features: ['Bluetooth', 'Backup Camera', 'Heated Seats']
     },
     {
       make: 'Nissan',
@@ -88,7 +98,8 @@ export class CarGalleryComponent {
       year: 2021,
       price: 25000,
       img: './img/Porsche.webp',
-      like: false
+      like: false,
+      features: ['Bluetooth', 'Backup Camera', 'Heated Seats']
     },
     {
       make: 'Volkswagen',
@@ -96,7 +107,8 @@ export class CarGalleryComponent {
       year: 2021,
       price: 30000,
       img: './img/Porsche.webp',
-      like: false
+      like: false,
+      features: ['Bluetooth', 'Backup Camera', 'Heated Seats']
     },
     {
       make: 'Hyundai',
@@ -104,7 +116,8 @@ export class CarGalleryComponent {
       year: 2021,
       price: 20000,
       img: './img/Porsche.webp',
-      like: false
+      like: false,
+      features: ['Bluetooth', 'Backup Camera', 'Heated Seats']
     },
     {
       make: 'Kia',
@@ -112,15 +125,29 @@ export class CarGalleryComponent {
       year: 2021,
       price: 22000,
       img: './img/Porsche.webp',
-      like: false
+      like: false,
+      features: ['Bluetooth', 'Backup Camera', 'Heated Seats']
     },
     {
       make: 'Mazda',
       model: '3',
       year: 2021,
       price: 21000,
-    img: './img/Porsche.webp',
-    like: false
+      img: './img/Porsche.webp',
+      like: false,
+      features: ['Bluetooth', 'Backup Camera', 'Heated Seats']
     }
   ];
+
+  popupVisible: boolean = false;
+  selectedCar: any = null;
+
+  openPopup(car: any) {
+    this.selectedCar = car;
+    this.popupVisible = true;  // Pop-up anzeigen
+  }
+
+  closePopup() {
+    this.popupVisible = false;  // Pop-up schließen
+  }
 }

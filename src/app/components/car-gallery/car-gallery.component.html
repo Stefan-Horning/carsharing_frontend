@@ -1,3 +1,14 @@
 <div class="p-3 flex flex-wrap justify-around">
-    <app-card *ngFor="let car of cars" [car]="car" class="w-[45%]"></app-card>
+    <app-card *ngFor="let car of cars" [car]="car" (cardClicked)="openPopup($event)" class="w-[45%]"></app-card>
 </div>
+
+<!-- <div *ngIf="popupVisible" class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+    <div class="bg-white p-6 rounded-lg text-center max-w-md w-full">
+      <img [src]="selectedCar.img" alt="Car image" class="w-full rounded-lg">
+      <h2 class="mt-4 text-lg font-semibold">{{ selectedCar.make }} {{ selectedCar.model }}</h2>
+      <p class="mt-2 text-gray-700">{{ selectedCar.price }}€</p>
+      <button (click)="closePopup()" class="mt-4 bg-red-500 text-white px-4 py-2 rounded-full hover:bg-red-600 transition">Close</button>
+    </div>
+</div> -->
+
+<app-pop-up-car *ngIf="popupVisible" [selectedCar]="selectedCar" (close)="closePopup()"></app-pop-up-car>

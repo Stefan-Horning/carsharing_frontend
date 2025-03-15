@@ -1,0 +1,34 @@
+<div class="fixed inset-0 bg-[rgba(0,0,0,0.8)] bg-opacity-50 flex justify-center items-center z-50" (click)="onClose()">
+    <div class="bg-white p-6 rounded-lg text-center max-w-md w-5/6 relative max-h-3/4 overflow-y-scroll" (click)="onPopUpClick($event)">
+        <img (click)="onClose()" class="h-5 w-5 absolute top-3 right-3" src="./icons/x-black.webp" alt="">
+        <img [src]="selectedCar.img" alt="Car image" class="w-full rounded-lg mt-5">
+        <div class="flex justify-between items-center mt-4">
+            <h2 class="text-lg font-semibold">{{ selectedCar.make }} {{ selectedCar.model }}</h2>
+            <button (click)="toggleLike($event); " class="focus:outline-none border-white h-10 w-10 flex justify-center items-center rounded-full p-1 bg-[rgba(0,0,0,0.3)] p-2">
+                <svg *ngIf="!liked" class="w-5 h-5 text-white transition-all duration-300 scale-100" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.8a5.5 5.5 0 0 0 0-7.8z"/>
+                </svg>
+                <svg *ngIf="liked" class="w-5 h-5 text-red-500 transition-all duration-300 transform scale-100 animate-pop" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 21l-1-1C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21z"/>
+                </svg>
+            </button>
+        </div>
+        <div class="flex justify-between items-center mt-5">
+            <p>{{ selectedCar.price }}€/Month</p>
+            <p>Year/{{ selectedCar.year }}</p>
+        </div>
+        <div class="mt-5 flex justify-between items-center">
+            <h2>Car features:</h2>
+        </div>
+        <div class="mt-2 ">
+            <ul class="list-disc list-inside flex flex-col justify-between items-start">
+                <li *ngFor="let feature of selectedCar.features">{{ feature }}</li>
+            </ul>
+        </div>
+        
+        <div class="mt-5">
+            <app-button [name]="'Rent'"></app-button>
+        </div>
+       
+    </div>
+</div>

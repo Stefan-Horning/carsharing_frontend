@@ -1,7 +1,7 @@
-<div class="w-full p-3">
+<div class="w-full p-3" (click)="onCardClick($event)">
     <div class="relative">
         <img class="w-full object-cover rounded-md" [src]="car.img" alt="">
-        <button (click)="toggleLike()" class="absolute top-1 right-1 focus:outline-none border-white rounded-full p-1 bg-[rgba(0,0,0,0.5)] p-2">
+        <button (click)="toggleLike($event); " class="absolute top-1 right-1 focus:outline-none border-white rounded-full p-1 bg-[rgba(0,0,0,0.5)] p-2">
             <svg *ngIf="!liked" class="w-5 h-5 text-white transition-all duration-300 scale-100" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.8a5.5 5.5 0 0 0 0-7.8z"/>
             </svg>
@@ -16,6 +16,6 @@
         <h3>{{car.model}}</h3>
     </div>
     <div class="flex text-xs mt-1">
-        <span>{{car.price}}€</span>
+        <span>{{car.price}}€/Month</span>
     </div>
 </div>

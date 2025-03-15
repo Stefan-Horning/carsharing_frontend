@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-card',
@@ -15,7 +15,9 @@ export class CardComponent implements OnInit {
     price: number;
     img: string;
     like: boolean;
+    features: string[];
   };
+  @Output() cardClicked = new EventEmitter<any>();
 
   liked = false;
 
@@ -25,7 +27,12 @@ export class CardComponent implements OnInit {
     }
   }
 
-  toggleLike() {
+  toggleLike(event: MouseEvent) {
+    event.stopPropagation();
     this.liked = !this.liked;
+  }
+
+  onCardClick(event: MouseEvent) {
+    this.cardClicked.emit(this.car);  // Emitte das Car-Objekt an den Parent
   }
 }
