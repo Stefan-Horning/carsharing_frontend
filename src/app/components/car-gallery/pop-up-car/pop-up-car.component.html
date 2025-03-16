@@ -1,5 +1,5 @@
 <div class="fixed inset-0 bg-[rgba(0,0,0,0.8)] bg-opacity-50 flex justify-center items-center z-50" (click)="onClose()">
-    <div class="bg-white p-6 rounded-lg text-center max-w-md w-5/6 relative max-h-14/15 overflow-y-scroll" (click)="onPopUpClick($event)">
+    <div class=" p-6 bg-[#F9FAFB] rounded-lg text-center max-w-md w-5/6 relative max-h-14/15 overflow-y-scroll" (click)="onPopUpClick($event)">
         <img (click)="onClose()" class="h-5 w-5 absolute top-3 right-3" src="./icons/x-black.webp" alt="">
         <img [src]="selectedCar.img" alt="Car image" class="w-full rounded-lg mt-5">
         <div class="flex justify-between items-center mt-4">
@@ -14,7 +14,7 @@
             </button>
         </div>
         <div class="flex justify-between items-center mt-5">
-            <p>{{ selectedCar.price }}€/Month</p>
+            <p>{{ selectedCar.price }}€/Day</p>
             <p>Year/{{ selectedCar.year }}</p>
         </div>
         <div class="mt-5 flex justify-between items-center">
@@ -25,10 +25,35 @@
                 <li *ngFor="let feature of selectedCar.features">{{ feature }}</li>
             </ul>
         </div>
-        
         <div class="mt-5">
-            <app-button [name]="'Rent'"></app-button>
+            <h2>Book now:</h2>
         </div>
+        <form action="">
+            <div class="relative mt-5">
+                <input type="date" class="border-1 border-[#E5E5E5] text-gray-600 text-sm w-full p-3 rounded-md peer shadow-sm"
+                    placeholder=" " [(ngModel)]="startDate" id="start" min="{{ today }}" (change)="onStartDateChange($event)" [ngModelOptions]="{standalone: true}">
+                <label for="start"
+                    class="absolute left-10 top-0 transform -translate-y-1/2 text-gray-400 peer-placeholder-shown:top-1/2 
+                       peer-placeholder-shown:-translate-y-1/2 peer-focus:top-0 peer-focus:-translate-y-1/2 
+                       transition-all bg-[#F9FAFB] px-1">Start-date</label>
+            </div>
+            <div class="relative mt-5">
+                <input type="date" class="border-1 border-[#E5E5E5] text-gray-600 text-sm w-full p-3 rounded-md peer shadow-sm"
+                    placeholder=" " id="start" [min]="minEndDate "(change)="onEndDateChange($event)" [(ngModel)]="endDate" [ngModelOptions]="{standalone: true}">
+                <label for="start"
+                    class="absolute left-10 top-0 transform -translate-y-1/2 text-gray-400 peer-placeholder-shown:top-1/2 
+                       peer-placeholder-shown:-translate-y-1/2 peer-focus:top-0 peer-focus:-translate-y-1/2 
+                       transition-all bg-[#F9FAFB] px-1">End-date</label>
+            </div>
+            <div class="mt-5 flex justify-center items-center">
+                <h2>Cost: {{ cost }}€</h2>
+            </div>
+            
+            <div class="mt-5">
+                <app-button [name]="'Rent'"></app-button>
+            </div>
+        </form>
+        
        
     </div>
 </div>
