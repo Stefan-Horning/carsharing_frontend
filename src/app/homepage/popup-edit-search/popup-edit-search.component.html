@@ -1,9 +1,12 @@
-<div class="fixed inset-0 bg-[rgba(0,0,0,0.8)] bg-opacity-50 flex justify-center items-center z-50" >
-    <div class=" p-6 bg-[#F9FAFB] rounded-lg text-center max-w-md w-5/6 relative max-h-14/15 overflow-y-scroll">
-        <h1>Search</h1>
-
-        <h3>Price/Day</h3>
-        <p class="mb-5">{{ minValue | number:'1.0-3' }}€ - {{ maxValue | number:'1.0-3' }}€</p>
+<div class="fixed inset-0 bg-[rgba(0,0,0,0.8)] bg-opacity-50 flex justify-center items-center z-50" (click)="onClose()">
+    <div class=" p-6 bg-[#F9FAFB] rounded-lg text-center max-w-md w-5/6 relative max-h-14/15 overflow-y-scroll" (click)="onPopUpClick($event)">
+        <img (click)="onClose()" class="h-5 w-5 absolute top-3 right-3" src="./icons/x-black.webp" alt="">
+        <h1 class="text-2xl pb-3">Edit Search</h1>
+        <div class="mb-7">
+            <app-search></app-search>
+        </div>
+        <h3 class="pb-3 text-2xl">Price/Day:</h3>
+        <p class="mb-3">{{ minValue | number:'1.0-3' }}€ - {{ maxValue | number:'1.0-3' }}€</p>
 
         <ngx-slider
         [(value)]="minValue"
@@ -11,5 +14,27 @@
         [options]="sliderOptions"
         class="custom-slider">
         </ngx-slider>
+        <h3 class="pb-3 pt-3 text-2xl">Available:</h3>
+            <div class="relative mt-5">
+                <input type="date" class="border-1 border-[#E5E5E5] text-gray-600 text-sm w-full p-3 rounded-md peer shadow-sm"
+                    placeholder=" " [(ngModel)]="startDate" id="start" min="{{ today }}" (change)="onStartDateChange($event)" [ngModelOptions]="{standalone: true}">
+                <label for="start"
+                    class="absolute left-10 top-0 transform -translate-y-1/2 text-gray-400 peer-placeholder-shown:top-1/2 
+                       peer-placeholder-shown:-translate-y-1/2 peer-focus:top-0 peer-focus:-translate-y-1/2 
+                       transition-all bg-[#F9FAFB] px-1">Start-date</label>
+            </div>
+            <div class="relative mt-5">
+                <input type="date" class="border-1 border-[#E5E5E5] text-gray-600 text-sm w-full p-3 rounded-md peer shadow-sm"
+                    placeholder=" " id="start" [min]="minEndDate "(change)="onEndDateChange($event)" [(ngModel)]="endDate" [ngModelOptions]="{standalone: true}">
+                <label for="start"
+                    class="absolute left-10 top-0 transform -translate-y-1/2 text-gray-400 peer-placeholder-shown:top-1/2 
+                       peer-placeholder-shown:-translate-y-1/2 peer-focus:top-0 peer-focus:-translate-y-1/2 
+                       transition-all bg-[#F9FAFB] px-1">End-date</label>
+            </div>
+            
+        <div class="mt-5">
+            <app-button [name]="'Search'"></app-button>
+        </div>
+       
     </div>
 </div>
