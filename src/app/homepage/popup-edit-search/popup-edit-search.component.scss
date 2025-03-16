@@ -1,0 +1,33 @@
+.custom-slider {
+    --ngx-slider-bar-color: orange;
+    --ngx-slider-pointer-color: orange;
+    --ngx-slider-selection-color: orange;
+  }
+  
+  .custom-slider .ngx-slider-pointer {
+    width: 16px; /* Größe des Schiebereglers angepasst */
+    height: 16px;
+    border-radius: 50%; /* Rundung des Schiebereglers */
+  }
+  
+  ::ng-deep ngx-slider .ngx-slider-selection {
+    background-color: orange !important; /* Der aktive Bereich des Sliders */
+  }
+  
+  ::ng-deep ngx-slider .ngx-slider-pointer {
+    background-color: orange !important; /* Schieberegler (Punkt) */
+    border: 3px solid darkorange !important;
+  }
+
+  ::ng-deep .custom-slider .ngx-slider-pointer:focus,
+  ::ng-deep .custom-slider .ngx-slider-pointer:active {
+      outline: none !important;
+      border: 3px solid orange !important;
+      box-shadow: 0 0 8px orange !important;
+  }
+  
+  /* Entfernt den blauen Standard-Punkt */
+  ::ng-deep ngx-slider .ngx-slider-pointer::after {
+    display: none !important;
+  }
+  

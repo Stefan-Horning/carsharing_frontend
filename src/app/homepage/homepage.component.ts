@@ -3,12 +3,14 @@ import { Component } from '@angular/core';
 import { HeaderComponent } from '../components/header/header.component';
 import { SearchComponent } from './search/search.component';
 import { CarGalleryComponent } from '../components/car-gallery/car-gallery.component';
+import { PopupEditSearchComponent } from './popup-edit-search/popup-edit-search.component';
+import { AuthComponent } from "../auth/auth.component";
 
 @Component({
   selector: 'app-homepage',
-  imports: [CommonModule,HeaderComponent,SearchComponent,CarGalleryComponent],
   templateUrl: './homepage.component.html',
-  styleUrl: './homepage.component.scss'
+  styleUrl: './homepage.component.scss',
+  imports: [CommonModule, HeaderComponent, SearchComponent, CarGalleryComponent, PopupEditSearchComponent]
 })
 export class HomepageComponent {
 
